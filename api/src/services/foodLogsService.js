@@ -1,6 +1,6 @@
 const foodLogsService = {
-    async setFoodLog(req, res) {
-        return req, res
+    async setFoodLog(log, bowl_id) {
+        return log;
     },
 };
 

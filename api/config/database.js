@@ -1,7 +1,7 @@
 module.exports = {
   username: 'root',
   password: 'root',
-  database: 'crud_sequelize',
-  host: '127.0.0.1',
+  database: 'pet-feeder',
+  host: 'localhost',
   dialect: 'postgres',
 }
