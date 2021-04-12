@@ -1,6 +1,18 @@
+const db = require('../../models');
+const foodLogModel = db.FoodLog;
+
 const foodLogsService = {
     async setFoodLog(log, bowl_id) {
-        return log;
+        try {
+            const foodLog = await foodLogModel.create({
+                bowl_id: bowl_id,
+                log: log,
+            });
+            return foodLog;
+        } catch (err) {
+            console.log(err);
+            return false;
+        }
     },
 };
 
