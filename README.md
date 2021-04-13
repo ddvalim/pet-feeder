@@ -29,6 +29,7 @@ Depois de concluir esta instalação, é necessário criar a base de dados:
 
 - npx sequelize db:create
 - npx sequelize db:migrate
+- npx sequelize db:seed:all
 
 Finalmente, para colocar o servidor no ar:
 
