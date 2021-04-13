@@ -33,6 +33,31 @@ const foodLogsController = {
             });
         }
     },
+
+    async getFoodLog(req, res) {
+        if (!req.params.bowl_id) {
+            return res.status(400).json({
+                message: 'Missing bowl_id parameter',
+                status: 'Bad request',
+            });
+        }
+
+        const bowl_id = req.params.bowl_id;
+
+        const response = await foodLogsService.getFoodLog(bowl_id);
+        if (response) {
+            return res.status(200).json({
+                message: 'All logs have been recovered',
+                status: 'OK',
+                logs: response,
+            });
+        } else {
+            return res.status(400).json({
+                message: 'Invalid parameters',
+                status: 'Bad request',
+            });
+        }
+    }
 };
 
 module.exports = foodLogsController;
